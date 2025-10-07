@@ -318,6 +318,54 @@
     background-color: #6a1b9a;
     color: white;
 }
+.featured_section {
+    background-color: #fce4ec;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.featured_title {
+    font-size: 36px;
+    color: #ad1457;
+    margin-bottom: 35px;
+    font-style: italic;
+}
+
+.featured_grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.featured_card {
+    background-color: #fff0f6;
+    border: 2px solid #ad1457;
+    border-radius: 20px;
+    width: 230px;
+    box-shadow: 0 3px 6px rgba(173, 20, 87, 0.3);
+    padding: 15px;
+}
+
+.featured_img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    object-fit: cover;
+    height: 200px; /* uniform height */
+}
+
+.featured_card h3 {
+    font-size: 22px;
+    color: #6a1b9a;
+    margin-bottom: 8px;
+}
+
+.featured_card p {
+    font-size: 16px;
+    color: #880e4f;
+}
 
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
