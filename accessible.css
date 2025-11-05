@@ -1,0 +1,106 @@
+/* ACCESSIBLE STYLE ADDITIONS FOR ELDERLY & DISABLED USERS ---------------------------------- */
+/* Increased base font size */
+body, html {
+    font-size: 19px; /* Larger default text for readability */
+    line-height: 1.8;
+    font-family: Arial, Helvetica, 'Roboto Mono', monospace, sans-serif;
+    background-color: #fff8f0;
+    color: #26162b;
+}
+/* High contrast mode toggle (optional styling) */
+.high-contrast body, .high-contrast html {
+    background-color: #000;
+    color: #fff !important;
+}
+.high-contrast .main, .high-contrast .about, .high-contrast .products, 
+.high-contrast .team, .high-contrast .featured_section, .high-contrast .contacts, .high-contrast .contact_form {
+    background-color: #000 !important;
+    color: #fff !important;
+    border-color: #ff0 !important;
+}
+/* Button and input accessibility */
+.main_button, .products_button, .contact_button, input, textarea {
+    outline: 2px solid #333;
+    outline-offset: 2px;
+    font-size: 22px;
+    min-height: 48px;
+    padding: 12px 20px;
+    background: #fafafa;
+    color: #222;
+}
+/* Larger link/button hover/focus contrast */
+.main_button:hover, .products_button:hover, .contact_button:hover {
+    background-color: #333 !important;
+    color: #ffe800 !important;
+}
+.main_button:focus, .products_button:focus, .contact_button:focus, input:focus, textarea:focus {
+    outline: 3px solid #ffe800;
+    background-color: #222;
+    color: #ffe800;
+}
+/* Focused menu and global nav accessibility */
+.menu .menu_item .global:focus {
+    outline: 3px solid #222;
+    background-color: #ffe800 !important;
+    color: #222 !important;
+}
+.menu .menu_item .global {
+    font-size: 32px;
+    min-height: 56px;
+    padding: 12px 20px;
+}
+.menu .menu_item .global:hover {
+   background-color: #222 !important;
+   color: #ffe800 !important;
+   outline: 2px solid #ffe800;
+}
+/* Heading sizes clarity */
+h1, h2, h3, h4, h5, h6 {
+    font-family: Arial, Helvetica, 'Roboto Mono', monospace, sans-serif;
+    font-size: calc(2em + 5px);
+    font-weight: bold;
+    color: #a5226f;
+    margin-bottom: 18px;
+    letter-spacing: 0.03em;
+}
+/* Inputs - better touch target */
+input[type="text"], input[type="email"], textarea {
+    font-size: 22px;
+    padding: 14px;
+    border-radius: 12px;
+    border: 2px solid #ce93d8;
+}
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    outline: 3px solid #222;
+}
+/* Ensure accessibility for visually impaired: readable contrast */
+.about_text, .products_card p, .team_member_description, .contacts_text_location, .contacts_text_phone, .contacts_text_email {
+    color: #26162b !important;
+    font-size: 21px !important;
+    background-color: #fff4f4 !important;
+}
+.featured_card p, .products_title, .main_title {
+    color: #222 !important;
+}
+/* Larger touch/click targets for main controls */
+.products_button, .contact_button, .main_button {
+    min-width: 140px;
+    min-height: 48px;
+    font-size: 22px;
+    border-radius: 16px;
+}
+/* Add label to every input visually (suggest in HTML if missing) */
+input, textarea {
+    margin-bottom: 20px;
+}
+@media (max-width: 700px) {
+    body, html {
+        font-size: 18px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-size: calc(1.3em + 5px);
+    }
+}
+
+/* ----------- END ACCESSIBLE STYLE ADDITIONS ----------- */
+
