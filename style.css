@@ -9,29 +9,82 @@
     width: 40%;
 }
 .menu {
+    align-items: center;
     text-align: center;
-    height: 70px;
+    justify-content: right;
+    height: 90px;
     background-color: #f7d1e3; /* light pink pastel */
-    padding-top: 15px;
+    padding-top: 0px;
 }
-
+.cont{
+    flex-direction: row;
+}
+nav{
+    display:flex;
+}
 .menu .menu_item {
     list-style-type: none;
-    display: inline-block;
-    margin: 10px 30px;
+    flex-direction: row;
+    padding: 20px;
+}
+.title{
+    color:#6a1b9a;
+    font-size: 28px;
+    font-weight: bold;
+    margin-right: 45%;
+    border: 2px solid #6a1b9a; /* add border around site title */
+    border-radius: 8px;
+    padding: 4px 20px; /* widen white background */
+    background-color: #ffffff; /* white background behind title */
+    display: inline-block; /* keep background tight to text */
+
+}
+.lasta{
+    margin-right: 5%;
+}
+.global{
+    margin-left: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #6a1b9a; /* purple color */
+    font-size: 28px;
+    font-weight: bold;
+    padding: 6px 16px;
+    border-radius: 6px;
+    background: transparent;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-color: #ad1457;
 }
 
+.global:hover{
+    transition: 0.6s ease;
+}
 .menu .menu_item .global {
     text-decoration: none;
     color: #6a1b9a; /* purple color */
     font-size: 28px;
     font-weight: bold;
+    padding: 6px 16px;
+    border-radius: 6px;
+    background: transparent;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-color: #ad1457;
 }
 
 .menu .menu_item .global:hover {
-    font-size: 32px;
+   background-color: rgba(255, 255, 255, 0.5);
+   border-color: black;
     color: #ab47bc;
-    transition: 0.3s ease;
+    transition: 0.6s ease;
+}
+
+.menu .menu_item:hover {
+   background-color: rgba(255, 255, 255, 0.5);
+   border-color: black;
+    color: #ab47bc;
+    transition: 0.6s ease;
 }
 
 .main {
@@ -104,24 +157,164 @@
     text-align: justify;
 }
 
+.products, .team, .featured_grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  align-items: stretch; /* ensures children stretch to same height on a row */
+}
+
+.products > .products_title, .team > h2, .featured_section > .featured_title {
+  flex: 0 0 100%;
+  text-align: center;
+  margin-bottom: 12px;
+    background: transparent;
+    align-items: center;
+}
+
 .products {
-    text-align: center;
     padding: 60px 20px;
-    background-color: #f3e5f5; /* soft lavender */
+    background-color: #ffffff; /* soft lavender */
+    /* Two-column layout: sidebar + grid */
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 40px; /* 40px gap between sidebar and products */
+    align-items: start;
+    position: relative; /* enable vertical divider positioning */
+}
+
+/* Vertical divider between sidebar and product grid */
+.products::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 320px; /* end of sidebar column */
+    transform: translateX(20px); /* half of 40px gap */
+    width: 0;
+    border-left: 1px solid #e6dff0; /* subtle lavender divider */
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Purple background behind the entire sidebar column (including above/below the box) */
+.products::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 360px; /* cover sidebar (320px) + 40px gap to eliminate white */
+    background-color: #f3e5f5; /* soft purple */
+    z-index: 0;
+}
+
+/* Grid of product cards (4 per row, fixed width) */
+.products_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 290px);
+    gap: 60px;
+    justify-content: center; /* center fixed-width grid within available width */
+    align-items: stretch;
+    text-align: center;
+}
+
+/* Keep the section title spanning full width above the grid */
+.products_grid > .products_title {
+    grid-column: 1 / -1;
+}
+
+/* Enhance visibility of Featured Products title */
+.products_grid > .products_title {
+    background-color: #fff5f7; /* light background for contrast */
+    border: 2px solid #e53935; /* red border to stand out */
+    border-radius: 12px;
+    padding: 10px 14px;
+    color: #6a1b9a; /* readable text color */
+    display: block; /* span full grid width */
+    width: 100%;
+    margin: 0; 
+    text-align: center; /* keep text centered */
+}
+
+/* Improve visibility of the products H2 title */
+/* (Reverted visual overrides for products title) */
+
+/* Apply same visual treatment to Meet the Team title */
+.team > h2 {
+    background-color: #fff5f7; /* light background for contrast */
+    border: 2px solid #e53935; /* red border to stand out */
+    border-radius: 12px;
+    padding: 10px 14px;
+    color: #6a1b9a; /* readable text color */
+    display: inline-block; /* keep background tight around text */
+}
+
+/* Sidebar styles */
+.products_filters {
+    position: sticky;
+    top: 0; /* stick to top of products section */
+    align-self: stretch; /* span the full column height */
+    background: transparent; /* let column purple show through */
+    border: 2px solid transparent;
+    border-radius: 16px;
+    padding: 16px;
+    height: 100%;
+    width: 100%;
+    z-index: 2; /* above divider/background */
+}
+
+.products_filters h3 {
+    margin-bottom: 10px;
+    color: #6a1b9a;
+    text-align: center;
+}
+
+.products_search {
+    width: 100%;
+    padding: 14px 16px; /* larger input */
+    border-radius: 12px;
+    border: 2px solid #ce93d8;
+    outline: none;
+    font-size: 18px; /* larger text */
+}
+.products_search:focus {
+    border-color: #6a1b9a;
+    box-shadow: 0 0 0 3px rgba(106,27,154,0.1);
+}
+
+.products_card, .team_member, .featured_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 0 1 290px; /* base width; adjusts on smaller screens */
+  box-sizing: border-box;
+  padding: 16px;
+}
+
+.products_img, .featured_img, .team_member img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex: 0 0 auto;
 }
 
 .products_title {
     font-size: 36px;
-    color: #6a1b9a;
+    color: #dfb4fa;
     margin-bottom: 50px;
 }
 
 .products_card {
-    display: inline-block;
-    width: 290px;
-    margin: 0 20px 40px 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* fill 290px grid cell */
+    margin: 0; /* grid handles spacing via gap */
     vertical-align: top;
-    border: 2px solid #ce93d8;
+    border: 2px solid #fafafa;
     border-radius: 20px;
     background-color: #faf4fc;
     box-shadow: 2px 2px 8px rgba(106, 27, 154, 0.3);
@@ -131,9 +324,9 @@
 /* Ensure all product images are uniform in size and aspect ratio */
 .products_img {
     width: 100%;
-    height: auto;
+    height: 180px;
     display: block;
-    object-fit: contain; /* Keeps images proportional, prevents stretching */
+    object-fit: cover; /* Uniform thumbnails to stabilize card height */
 }
 
 
@@ -147,11 +340,14 @@
     color: #4a148c;
     padding: 0 10px;
     margin-bottom: 10px;
+    flex: 1; /* fill available space to push button down */
 }
 
 .products_button {
     display: block;
     margin: 0 auto;
+    margin-top: auto; /* stick to bottom of the card */
+    align-self: center;
     padding: 10px 20px;
     border-radius: 30px;
     background-color: #ce93d8;
@@ -177,6 +373,8 @@
     font-size: 36px;
     color: #ad1457;
     margin-bottom: 50px;
+    background: transparent;
+    align-items: center;
 }
 
 .team_member {
@@ -314,6 +512,29 @@
     transition: background-color 0.3s ease;
 }
 
+/* Style for one specific ad image */
+#ad-img {
+  display: block;                 /* Needed for margin centering */
+  margin: 20px auto;              /* Centers horizontally */
+  width: 300px;                   /* Adjust as needed */
+  border-radius: 15px;            /* Soft rounded corners */
+  border: 3px solid #ffb6c1;      /* Light pink border */
+  box-shadow: 0 0 15px #ffc0cb;   /* Soft pink glow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  filter: brightness(1.05) saturate(1.2); /* Slight pop */
+}
+
+/* Optional container centering + responsive max */
+.ad-wrapper {
+  text-align: center;             /* Fallback centering context */
+}
+
+/* Hover effect */
+#ad-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #ff99cc;
+}
+
 .contact_button:hover {
     background-color: #6a1b9a;
     color: white;
@@ -388,5 +609,47 @@
     }
     .main_subtitle {
         font-size: 24px;
+    }
+}
+
+
+/* === UNIFORM IMAGE CROPPING: make product/featured/team images same width & height ===
+   - All product/featured images -> 220x220px cropped (object-fit: cover)
+   - Team member images -> 220x220px cropped and shown as circle
+   - Attack_titan or other image-specific classes overridden to maintain uniform size
+   - Uses !important to ensure these rules take precedence without changing existing layout.
+*/
+.products_img, .featured_img, .products_card img, .featured_card img {
+    width: 220px !important;
+    height: 220px !important;
+    object-fit: cover !important;
+    display: block;
+    margin: 0 auto 12px auto;
+    border-radius: 12px !important;
+    flex: 0 0 auto;
+}
+
+.team_member img, .team_member .team_img {
+    width: 220px !important;
+    height: 220px !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    display: block;
+    margin: 0 auto 12px auto;
+    flex: 0 0 auto;
+}
+
+/* Ensure any special classes (like attack_titan) don't override the uniform sizing */
+.attack_titan.products_img, .attack_titan.featured_img {
+    width: 220px !important;
+    height: 220px !important;
+    object-fit: cover !important;
+}
+
+/* Responsive: scale down on small screens but keep square crop */
+@media (max-width: 480px) {
+    .products_img, .featured_img, .team_member img {
+        width: 140px !important;
+        height: 140px !important;
     }
 }

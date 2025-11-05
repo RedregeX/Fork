@@ -8,36 +8,161 @@
 </head>
 <body>
     <nav class="menu">
-        <ul>
-            <li class="menu_item"><a href="home.html" class="global">Home</a></li>
-            <li class="menu_item"><a href="products.html" class="global">Products</a></li>
-            <li class="menu_item"><a href="teamcontact.html" class="global">Team & Contact</a></li>
-        </ul>
+        <p class="title">ANIME HEAVEN</p>
+        <a href="home.html" class="global">Home</a>
+        <a href="products.html" class="global">Products</a>
+        <a href="teamcontact.html" class="global lasta">Team & Contact</a>
     </nav>
 
     <section class="products" id="products">
-        <h2 class="products_title">Featured Products</h2>
+        <aside class="products_filters">
+            <h3>Search</h3>
+            <input type="search" id="products-search" class="products_search" placeholder="Search products..." aria-label="Search products" />
+        </aside>
 
-        <div class="products_card">
-            <img src="img/figure1.jpg" alt="Anime Figure 1" class="products_img" />
-            <h3>Naruto Uzumaki Figure</h3>
-            <p>Highly detailed action figure from the Naruto series.</p>
-            <button class="products_button">Add to Cart</button>
+        <div class="products_grid">
+            <h2 class="products_title">Featured Products</h2>
+
+            <!-- Original 3 products -->
+            <div class="products_card">
+                <img src="img/figure1.jpg" alt="Anime Figure 1" class="products_img" />
+                <h3>Naruto Uzumaki Figure</h3>
+                <p>Highly detailed action figure from the Naruto series.</p>
+                <button class="products_button">Add to Cart</button>
+            </div>
+
+            <div class="products_card">
+                <img src="img/figure2.jpg" alt="Anime Figure 2" class="products_img" />
+                <h3>Sailor Moon Wand</h3>
+                <p>Replica of Sailor Moon's iconic moon wand.</p>
+                <button class="products_button">Add to Cart</button>
+            </div>
+
+            <div class="products_card">
+                <img src="img/poster1.jpg" alt="Anime Poster" class="attack_titan products_img" />
+                <h3>Attack on Titan Poster</h3>
+                <p>High-quality poster for your anime room decoration.</p>
+                <button class="products_button">Add to Cart</button>
+            </div>
+
+            <!-- Featured products from Home (become products 4–7) -->
+            <div class="products_card">
+                <img src="img/newrelease1.jpg" alt="Demon Slayer Figure" class="products_img" />
+                <h3>Demon Slayer Figure</h3>
+                <p>Limited edition Tanjiro figure from the latest anime series.</p>
+                <button class="products_button">Add to Cart</button>
+            </div>
+
+            <div class="products_card">
+                <img src="img/newrelease2.jpg" alt="Jujutsu Kaisen Hoodie" class="products_img" />
+                <h3>Jujutsu Kaisen Hoodie</h3>
+                <p>Comfortable hoodie featuring Gojo’s iconic design.</p>
+                <button class="products_button">Add to Cart</button>
+            </div>
+
+            <div class="products_card">
+                <img src="img/popular1.jpg" alt="One Piece Mug" class="products_img" />
+                <h3>One Piece Mug</h3>
+                <p>Popular Straw Hat crew themed mug for daily use.</p>
+                <button class="products_button">Add to Cart</button>
+            </div>
+
+            <div class="products_card">
+                <img src="img/popular2.jpg" alt="My Hero Academia Bag" class="products_img" />
+                <h3>My Hero Academia Bag</h3>
+                <p>Stylish backpack inspired by UA High uniforms.</p>
+                <button class="products_button">Add to Cart</button>
+            </div>
+
+            <!-- 9 placeholder products (A–I) -->
+            <div class="products_card">
+                <img src="img/figure1.jpg" alt="Placeholder Product" class="products_img" />
+                <h3>Placeholder Product A</h3>
+                <p>Coming soon: awesome anime merch placeholder.</p>
+                <button class="products_button">Add to Cart</button>
+            </div>
+
+            <div class="products_card">
+                <img src="img/figure2.jpg" alt="Placeholder Product" class="products_img" />
+                <h3>Placeholder Product B</h3>
+                <p>Stay tuned for exciting products arriving shortly.</p>
+                <button class="products_button">Add to Cart</button>
+            </div>
+
+            <div class="products_card">
+                <img src="img/poster1.jpg" alt="Placeholder Product" class="products_img" />
+                <h3>Placeholder Product C</h3>
+                <p>More collectibles on the way. Check back later.</p>
+                <button class="products_button">Add to Cart</button>
+            </div>
+
+            <div class="products_card">
+                <img src="img/newrelease1.jpg" alt="Placeholder Product" class="products_img" />
+                <h3>Placeholder Product D</h3>
+                <p>New arrivals loading... your next favorite item awaits.</p>
+                <button class="products_button">Add to Cart</button>
+            </div>
+
+            <div class="products_card">
+                <img src="img/newrelease2.jpg" alt="Placeholder Product" class="products_img" />
+                <h3>Placeholder Product E</h3>
+                <p>Preview slot reserved for upcoming products.</p>
+                <button class="products_button">Add to Cart</button>
+            </div>
+
+            <div class="products_card">
+                <img src="img/popular1.jpg" alt="Placeholder Product" class="products_img" />
+                <h3>Placeholder Product F</h3>
+                <p>Keep an eye out for more anime goodies.</p>
+                <button class="products_button">Add to Cart</button>
+            </div>
+
+            <div class="products_card">
+                <img src="img/popular2.jpg" alt="Placeholder Product" class="products_img" />
+                <h3>Placeholder Product G</h3>
+                <p>Another placeholder for upcoming anime merch.</p>
+                <button class="products_button">Add to Cart</button>
+            </div>
+
+            <div class="products_card">
+                <img src="img/figure1.jpg" alt="Placeholder Product" class="products_img" />
+                <h3>Placeholder Product H</h3>
+                <p>Fresh items arriving soon. Stay tuned!</p>
+                <button class="products_button">Add to Cart</button>
+            </div>
+
+            <div class="products_card">
+                <img src="img/figure2.jpg" alt="Placeholder Product" class="products_img" />
+                <h3>Placeholder Product I</h3>
+                <p>More collectibles planned for this section.</p>
+                <button class="products_button">Add to Cart</button>
+            </div>
+
         </div>
-
-        <div class="products_card">
-            <img src="img/figure2.jpg" alt="Anime Figure 2" class="products_img" />
-            <h3>Sailor Moon Wand</h3>
-            <p>Replica of Sailor Moon's iconic moon wand.</p>
-            <button class="products_button">Add to Cart</button>
-        </div>
-
-        <div class="products_card">
-            <img src="img/poster1.jpg" alt="Anime Poster" class="attack_titan products_img "/>
-            <h3>Attack on Titan Poster</h3>
-            <p>High-quality poster for your anime room decoration.</p>
-            <button class="products_button">Add to Cart</button>
+    </section>
+    <section class="ads">
+        <div class="ad-wrapper">
+            <img id="ad-img" src="https://wallpapers.com/images/featured/astolfo-v7o2baza868iymbl.jpg">
         </div>
     </section>
 </body>
+<script>
+  (function() {
+    var input = document.getElementById('products-search');
+    if (!input) return;
+    var grid = document.querySelector('.products_grid');
+    if (!grid) return;
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.products_card'));
+
+    function normalize(str){ return (str || '').toLowerCase(); }
+
+    input.addEventListener('input', function(e){
+      var q = normalize(e.target.value);
+      cards.forEach(function(card){
+        var text = normalize(card.textContent);
+        card.style.display = text.indexOf(q) !== -1 ? '' : 'none';
+      });
+    });
+  })();
+  </script>
 </html>
